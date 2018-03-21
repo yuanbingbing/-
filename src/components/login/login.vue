@@ -1,15 +1,19 @@
 <template>
   <el-container id="inputLogin" size="mini">
-    <el-form :model="form"  ref="form" :rules="rules2"   id="froms" label-position="right" label-width="180px" status-icon>
-      <el-form-item label="姓名" label-width="120px" prop="name">
+    <el-form :model="form"  ref="form" :rules="rules2"   id="froms" label-position="center" status-icon>
+      <el-form-item label="姓名" label-width="100px" prop="name">
         <el-input type="text" v-model="form.name" style="width: 280px;" placeholder="请输入姓名" auto-complete="off"></el-input>
       </el-form-item>
-      <el-form-item label="密码" label-width="120px" prop="pass">
+      <el-form-item label="密码" label-width="100px" prop="pass">
         <el-input type="password" v-model="form.pass" style="width: 280px;" placeholder="请输入密码"></el-input>
       </el-form-item>
-      <el-form-item>
-        <el-button type="primary" v-on:click="submitForm()">登录</el-button>
-      </el-form-item>
+      <el-row>
+        <el-col :span="6" :push="12">
+          <el-form-item>
+            <el-button type="primary" v-on:click="submitForm()">登录</el-button>
+          </el-form-item>
+        </el-col>
+      </el-row>
     </el-form>
   </el-container>
 </template>
@@ -79,12 +83,22 @@ export default{
     submitForm () {
       // 判断用户名和密码是否正确
       if (this.tName && this.tPwd) {
+        // 跳转到指定的页面
+        this.$router.push({path: '/home/main'})
       }
     }
   }
 }
 </script>
 <style lang="scss" scoped="" type="text/css">
+// 解决ie9浏览器的兼容问题
+.el-container[data-v-3c0fb276]{
+  display:-webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
 /*定义容器的宽度和大小开始*/
 #inputLogin{
   width: 100%;
@@ -92,6 +106,8 @@ export default{
 }
 /*定义表单开始*/
 #froms{
+  width:380px;
+  height:280px;
   margin:160px auto;
 }
 /*定义表单结束*/
