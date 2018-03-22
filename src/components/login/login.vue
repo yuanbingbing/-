@@ -83,6 +83,8 @@ export default{
     submitForm () {
       // 判断用户名和密码是否正确
       if (this.tName && this.tPwd) {
+        // 用户登录之后这只Login的值为true
+        sessionStorage.setItem('key', JSON.stringify({login: true}))
         // 跳转到指定的页面
         this.$router.push({path: '/home/main'})
       }
@@ -91,14 +93,6 @@ export default{
 }
 </script>
 <style lang="scss" scoped="" type="text/css">
-// 解决ie9浏览器的兼容问题
-.el-container[data-v-3c0fb276]{
-  display:-webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-}
 /*定义容器的宽度和大小开始*/
 #inputLogin{
   width: 100%;

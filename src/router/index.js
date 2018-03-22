@@ -17,7 +17,7 @@ export default new Router({
       children: [
         {path: 'login', component: Login},
         {path: 'main', component: Main},
-        { path: '/*', redirect: '/home/login' }
+        {path: '/*', redirect: '/home/login'}
       ]
     },
     { path: '*', redirect: '/home' }
