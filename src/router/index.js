@@ -5,6 +5,8 @@ import Home from '@/components/home/home'
 import Login from '@/components/login/login'
 // 引入周报首页
 import Main from '@/components/main/mian'
+// 引入修改密码组件
+import MdfPwd from '@/components/mdfPwd/mdfPwd'
 // 使用路由
 Vue.use(Router)
 
@@ -16,7 +18,12 @@ export default new Router({
       component: Home,
       children: [
         {path: 'login', component: Login},
-        {path: 'main', component: Main},
+        {path: 'main',
+          component: Main,
+          children: [
+            {path: 'mdfPwd', component: MdfPwd}
+          ]
+        },
         {path: '/*', redirect: '/home/login'}
       ]
     },

@@ -5,7 +5,23 @@ $bg-color:#75b9e6;
   line-height: $height;
 }
 // 定义字体大小的变量
-@mixin font-size($size:16px) {
+@mixin font-size($size:16px,$weight:800) {
    font-size:$size;
-   font-weight:800; 
+   font-weight:$weight; 
 }
+//定义鼠标移入变成小手的宏
+@mixin cursor($style:pointer){
+	cursor:$style;
+}
+//定义鼠标移入改变的颜色
+$hover-bgcolor:#409EFF;
+$color:#333;
+//定义padding值
+@mixin padding($top:0px,$right:0px,$bottom:0px,$left:0px) {
+	padding:$top $right $bottom $left;
+}
+// 定义高度占父级容器的百分比开始
+@mixin height($height:100%) {
+  height:$height;
+}
+// 定义高度占父级容器的百分比结束

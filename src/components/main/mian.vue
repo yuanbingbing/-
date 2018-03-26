@@ -4,7 +4,9 @@
       <el-header is="publicHeader"></el-header>
       <el-container direction="horizontal">
         <el-aside width="200px">左侧导航栏</el-aside>
-        <el-main>内容区域</el-main>
+        <el-main>
+          <router-view></router-view>
+        </el-main>
       </el-container>
     </el-container>
   </div>
@@ -23,12 +25,14 @@ export default {
     background-color: #D3DCE6;
     color: #333;
     text-align: center;
-    line-height: 600px;
+    line-height: 400px;
+    height:600px;
   }
   .el-main {
     background-color: #E9EEF3;
     color: #333;
     text-align: center;
-    line-height: 540px;
+    line-height: 360px;
+    height:600px;
   }
 </style>
